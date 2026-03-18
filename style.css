@@ -1,0 +1,70 @@
+:root {
+    --bg: #010409;
+    --panel-bg: rgba(22, 27, 34, 0.7);
+    --accent: #00f2ff;
+    --warn: #ff004c;
+    --border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-color: var(--bg);
+    color: #c9d1d9;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.glow-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 10% 10%, #1a103d, transparent 40%),
+                radial-gradient(circle at 90% 90%, #0d1e3d, transparent 40%);
+    z-index: -1;
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%; background: rgba(1, 4, 9, 0.8); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+.logo { font-size: 1.5rem; font-weight: 800; }
+.logo span { color: var(--accent); }
+.subtitle { color: #8b949e; font-size: 0.8rem; }
+
+/* Bento Panels */
+.bento-panel {
+    background: var(--panel-bg); border: 1px solid var(--border);
+    border-radius: 20px; padding: 30px; margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.intro-card { display: flex; justify-content: space-between; align-items: center; }
+h2 { font-size: 2.5rem; font-weight: 800; margin: 0 0 15px 0; color: white; }
+.brain-icon { font-size: 5rem; color: #1e293b; margin-left: 20px; }
+
+/* Theater / Visualization */
+.visualization-theater { display: grid; grid-template-columns: 250px 1fr; gap: 20px; }
+.explanation-text { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; font-size: 0.9rem; color: #8b949e; }
+
+#canvas-container { background: #010101; border-radius: 15px; border: 1px solid #30363d; overflow: hidden; }
+
+/* Buttons */
+button {
+    background: #21262d; border: 1px solid #30363d; color: #c9d1d9;
+    padding: 10px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s;
+}
+button:hover { border-color: var(--accent); background: #30363d; }
+button:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-warn:hover { border-color: var(--warn); }
+
+/* Stages Grid */
+.stages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+.stage-card {
+    background: #0d1117; padding: 20px; border-radius: 15px; border: 1px solid var(--border); text-align: center;
+}
+.icon-circle {
+    width: 60px; height: 60px; border-radius: 50%; background: rgba(0, 242, 255, 0.1);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: var(--accent); font-size: 1.5rem;
+}
